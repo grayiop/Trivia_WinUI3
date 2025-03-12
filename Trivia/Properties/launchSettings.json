@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Trivia (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Trivia (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
