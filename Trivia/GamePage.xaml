@@ -11,6 +11,8 @@
 
     <Grid>
         <TextBlock x:Name="Question" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20" Margin="0,40,0,0"></TextBlock>
+        <TextBlock x:Name="Index" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20" Margin="0,40,0,0"></TextBlock>
+        <TextBlock x:Name="Score" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="20" Margin="0,40,0,0"></TextBlock>
         <Button x:Name="Answers1" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Answer1_Click" Padding="5,5,5,5" Margin="324,248,0,0"></Button>
         <Button x:Name="Answers2" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Answer2_Click" Padding="5,5,5,5" Margin="324,348,0,0"></Button>
         <Button x:Name="Answers3" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Answer3_Click" Padding="5,5,5,5" Margin="324,448,0,0"></Button>

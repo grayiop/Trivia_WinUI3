@@ -26,6 +26,7 @@ namespace Trivia
     {
         private int userSelectedAnswer = -1;
         private List<Question> questions = QuestionSetService.Instance.Questions;
+        private Score scores = ScoreBoardService.Instance.Scores;
         private int question_index = 0;
         private bool isSubmited = false;
         public GamePage()
@@ -87,6 +88,7 @@ namespace Trivia
             }
             if (userSelectedAnswer != questions[question_index].CorrectAnswer)
             {
+                ScoreBoardService.Instance.AddIncorrectAnswer();
                 switch (userSelectedAnswer)
                 {
                     case 1:
@@ -102,7 +104,12 @@ namespace Trivia
                         Answers4.Background = new SolidColorBrush(Microsoft.UI.Colors.Red);
                         break;
                 }
+            } 
+            else
+            {
+                ScoreBoardService.Instance.AddCorrectAnswer();
             }
+            Score.Text = $"{ScoreBoardService.Instance.GetScore():F0}";
             Description.Text = questions[question_index].Description;
             Submit.Content = "Next";
         }
@@ -122,9 +129,14 @@ namespace Trivia
             Answers2.Content = questions[question_index].Answers[1];
             Answers3.Content = questions[question_index].Answers[2];
             Answers4.Content = questions[question_index].Answers[3];
+            Index.Text = $"{question_index} / {questions.Count}";
         }
         private void SelectButtons(Button selectedButton)
         {
+            if (isSubmited)
+            {
+                return;
+            }
             ResetButtonsColor();
             selectedButton.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Gray);
             selectedButton.Background = new SolidColorBrush(Microsoft.UI.Colors.White);
