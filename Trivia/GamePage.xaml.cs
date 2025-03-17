@@ -60,6 +60,7 @@ namespace Trivia
             if (isSubmited)
             {
                 NextQuestion();
+                Description.Text = "";
             } else
             {
                 SubmitQuestion();
@@ -102,6 +103,7 @@ namespace Trivia
                         break;
                 }
             }
+            Description.Text = questions[question_index].Description;
             Submit.Content = "Next";
         }
         private void NextQuestion()

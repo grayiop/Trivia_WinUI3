@@ -114,12 +114,13 @@ namespace Trivia
                     QuestionText = row.Cell(2).Value.ToString(),
                     NumberOfAnswers = int.Parse(row.Cell(3).Value.ToString()),
                     CorrectAnswer = int.Parse(row.Cell(4).Value.ToString()),
+                    Description = row.Cell(5).Value.ToString(),
                     Answers = new List<string>
                     {
-                        row.Cell(5).Value.ToString(),
                         row.Cell(6).Value.ToString(),
                         row.Cell(7).Value.ToString(),
-                        row.Cell(8).Value.ToString()
+                        row.Cell(8).Value.ToString(),
+                        row.Cell(9).Value.ToString()
                     }
                 };
                 questions.Add(question);
